@@ -6,7 +6,7 @@ module.exports = {
   externalsPresets: { node: true },
   externals: [require("webpack-node-externals")()],
   resolve: {
-    extensions: [".ts", ".js", ".d.ts"],
+    extensions: [".ts"],
   },
   module: {
     rules: [{ test: /\.ts$/, use: ["ts-loader"], exclude: /node_modules/ }],

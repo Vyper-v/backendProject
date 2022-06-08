@@ -19,8 +19,7 @@ class Container {
 
   async init() {
     await mkdir(this.dirname, { recursive: true });
-    const data = await readFile(this.filename, "utf8");
-    if ((await this.fileExists()) === false || data === "") {
+    if (!(await this.fileExists())) {
       await writeFile(this.filename, "[]");
     }
   }

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "webpack --mode=production",
-    "watch": "webpack --watch --mode=development",
+    "watch:build": "webpack --watch --mode=production",
+    "watch:dev": "webpack --watch --mode=development",
     "lint": "eslint . --ext ts,js",
     "format": "eslint --fix",
     "start": "node dist/server.js"
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/node": "^17.0.41",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "eslint": "^8.0.1",
