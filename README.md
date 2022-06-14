@@ -2,22 +2,24 @@ I'm using [Postman](https://www.postman.com/supply-pilot-47272947/workspace/proy
 For personal use, set the local enviroment.
 The project is deployed in [Glitch](https://glitch.com/edit/#!/back-project). For this use the glitch enviroment.
 
-# Cart /api/cart
+# /api/cart
 
-  - GET /api/cart:id
+- GET /:id/products: returns the products in the cart
 
-  - POST /
+- POST / create a new cart and return the cart id
 
-  - PUT /:id
+- ~~PUT /:id update the cart~~ dont required
 
-  - DELETE /:id
+- DELETE /:id delete the cart
 
-# Product /api/products
+- DELETE /:id/products/:product_id: remove a product from the cart
 
-  - GET /:id
+# /api/products
 
-  - POST / (admin only)
+- GET /:id? returns all products or one product
 
-  - PUT /:id (admin only)
+- POST / (admin only) post a new product
 
-  - DELETE /:id (admin only)
+- PUT /:id (admin only) update a product
+
+- DELETE /:id (admin only) delete a product

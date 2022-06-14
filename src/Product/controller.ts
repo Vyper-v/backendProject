@@ -5,7 +5,12 @@ import product from "../types/product";
 const products = new Container("products");
 
 const getById = async (req: Request, res: Response) => {
-  const data = await products.getById(Number(req.params.id));
+  if (!req.params.id) {
+    return res.send(await products.getAll());
+  }
+
+  const id = Number(req.params.id);
+  const data = await products.getById(id);
   return data
     ? res.send(data)
     : res.status(404).json({
