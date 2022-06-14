@@ -2,21 +2,21 @@ I'm using [Postman](https://www.postman.com/supply-pilot-47272947/workspace/proy
 For personal use, set the local enviroment.
 The project is deployed in [Glitch](https://glitch.com/edit/#!/back-project). For this use the glitch enviroment.
 
-# Cart
+# Cart /api/cart
 
-  - GET /:id
+  - GET /api/cart:id
 
-  - POST
+  - POST /
 
   - PUT /:id
 
   - DELETE /:id
 
-# Product
+# Product /api/products
 
   - GET /:id
 
-  - POST (admin only)
+  - POST / (admin only)
 
   - PUT /:id (admin only)
 
