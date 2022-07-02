@@ -1,4 +1,4 @@
-import item from "../../lib/item";
+import item from "../Containers/item";
 import product from "./product";
 declare type cart = {
   id?: number;

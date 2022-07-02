@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Container from "../../lib/Container";
+import Container from "../Containers/Container";
 import product from "../types/product";
 
 const products = new Container("products");

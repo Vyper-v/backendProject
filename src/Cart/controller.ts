@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Container from "../../lib/Container";
-import item from "../../lib/item";
+import Container from "../Containers/Container";
+import item from "../Containers/item";
 import cart from "../types/cart";
 import product from "../types/product";
 

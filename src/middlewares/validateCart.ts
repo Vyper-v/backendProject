@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import item from "../../lib/item";
+import item from "../Containers/item";
 import product from "../types/product";
 import { validate, validateID } from "./validateProduct";
 
