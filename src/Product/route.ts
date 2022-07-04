@@ -1,8 +1,9 @@
 import express, { Router } from "express";
-import * as controller from "./controller";
+import ProductController from "./controller";
 import adminCheck from "../middlewares/adminCheck";
 import { validateProduct } from "../middlewares/validateProduct";
 
+const controller = new ProductController();
 const router = Router();
 
 router.use(express.json());

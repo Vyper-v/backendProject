@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-import item from "../Containers/item";
 import product from "../types/product";
 
 export function validateProduct() {
@@ -49,7 +48,7 @@ export function validate(data: product): object | null {
   return null;
 }
 
-export function validateID(data: product & item) {
+export function validateID(data: { [key: string]: any }): object | null {
   if (data.id === undefined || data.timestamp === undefined) {
     return {
       message: "All products must have an id and timestamp",

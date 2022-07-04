@@ -1,7 +1,8 @@
 import express, { Router } from "express";
 import { validateCart } from "../middlewares/validateCart";
-import * as controller from "./controller";
+import CartController from "./controller";
 
+const controller = new CartController();
 const router = Router();
 
 router.use(express.json());

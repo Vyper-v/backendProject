@@ -1,8 +1,8 @@
-import Container from "./Container";
+import AbstractContainer from "./AbstractContainer";
 import { ContainerId } from "./types/ContainerId";
 import mongoose from "mongoose";
 
-export default class ContainerMongodb implements Container {
+export default class ContainerMongodb implements AbstractContainer {
   collection: string;
   connectionURL: string;
   db: mongoose.Connection;
@@ -14,7 +14,7 @@ export default class ContainerMongodb implements Container {
     collection: string,
     connectionURL: string,
     modelName: string,
-    schema: mongoose.SchemaType
+    schema: mongoose.SchemaDefinition
   ) {
     this.collection = collection;
     this.connectionURL = connectionURL;
@@ -33,18 +33,34 @@ export default class ContainerMongodb implements Container {
   }
 
   async getById(ID: ContainerId): Promise<object | null> {
-    return await this.Model.findById(ID).exec();
+    try {
+      return await this.Model.findById(ID).exec();
+    } catch (error) {
+      return null;
+    }
   }
 
   async getAll(): Promise<object[]> {
-    return await this.Model.find().exec();
+    try {
+      return await this.Model.find().exec();
+    } catch (e) {
+      return [];
+    }
   }
 
   async deleteById(ID: ContainerId): Promise<object | null> {
-    return await this.Model.findByIdAndDelete(ID).exec();
+    try {
+      return await this.Model.findByIdAndDelete(ID).exec();
+    } catch {
+      return null;
+    }
   }
 
   async deleteAll(): Promise<object> {
-    return await this.Model.deleteMany().exec();
+    try {
+      return await this.Model.deleteMany().exec();
+    } catch (e) {
+      return {};
+    }
   }
 }

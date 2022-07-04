@@ -1,6 +1,8 @@
+import dotenv from "dotenv";
 import express from "express";
 import apiProduct from "./Product/route";
 import apiCart from "./Cart/route";
+dotenv.config();
 
 const port: number = Number(process.env.PORT) || 8080;
 const app = express();
